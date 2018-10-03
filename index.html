@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lalala</title>
+	<style>
+		.lalala{
+			display: block;
+			margin: auto 0;
+			text-align: center;
+			margin-top:6rem;
+		}
+	</style>
+</head>
+<body>
+	<div class="lalala">
+		<input type="text" id ='hehe' autofocus="">
+	</div>
+	<script src="http://192.168.31.113:8888/jquery.js"></script>
+	<script>
+		var input = $('#hehe');
+		let contect = $(`<h4 id = "show"></h4>`);
+		$('.lalala').append(contect);
+		input.on('keyup',function(key){
+			if(key.keyCode == '13'){
+				$.ajax({
+					url:'http://192.168.31.113:8888/',
+					data:{contect:input.val()},
+					success:function(data){
+						$('#show').html("");
+						$('#show').append(data);
+
+					}
+				})
+				input.val("");
+			}
+			})
+			$.ajax({
+
+			})
+	</script>
+</body>
+</html>
